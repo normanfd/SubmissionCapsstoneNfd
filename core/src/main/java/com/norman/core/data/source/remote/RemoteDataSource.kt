@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Singleton
 class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
-    suspend fun getAllMovie(): Flow<ApiResponse<List<MovieResponse>>> {
+    fun getAllMovie(): Flow<ApiResponse<List<MovieResponse>>> {
         //get data from remote api
         return flow {
             try {

@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "movie")
 data class MovieEntity(
     @PrimaryKey
-    @NonNull
     @ColumnInfo(name = "movie_id")
     var movieId: String,
     @ColumnInfo(name = "adult")

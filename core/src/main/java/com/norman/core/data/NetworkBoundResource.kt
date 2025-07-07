@@ -41,7 +41,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
         }
     }
 
-    protected open fun onFetchFailed() {}
+    protected open fun onFetchFailed() = Unit
 
     protected abstract fun loadFromDB(): Flow<ResultType>
 

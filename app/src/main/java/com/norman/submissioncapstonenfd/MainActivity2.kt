@@ -1,22 +1,15 @@
 package com.norman.submissioncapstonenfd
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.google.android.material.navigation.NavigationView
 import com.norman.submissioncapstonenfd.databinding.ActivityMain2Binding
 import com.norman.submissioncapstonenfd.ui.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -77,7 +70,7 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 title = getString(R.string.app_name)
             }
             R.id.nav_gallery -> {
-                val uri = Uri.parse("submissioncapstonenfd://favorite")
+                val uri = "submissioncapstonenfd://favorite".toUri()
                 startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
 //            R.id.nav_map -> {
