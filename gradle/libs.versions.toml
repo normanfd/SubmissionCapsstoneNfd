@@ -24,6 +24,8 @@ navigationFragmentKtx = "2.9.0"
 navigationUiKtx = "2.9.0"
 chuckerVersion = "4.0.0"
 leakcanaryVersion = "2.10"
+androidDatabaseSqlcipher = "4.5.4"
+sqliteKtx = "2.4.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -62,6 +64,8 @@ chucker = { module = "com.github.chuckerteam.chucker:library", version.ref = "ch
 chucker-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chuckerVersion" }
 
 leak-canary = {module ="com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanaryVersion"}
+android-database-sqlcipher = { module = "net.zetetic:android-database-sqlcipher", version.ref = "androidDatabaseSqlcipher" }
+androidx-sqlite-ktx = { module = "androidx.sqlite:sqlite-ktx", version.ref = "sqliteKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

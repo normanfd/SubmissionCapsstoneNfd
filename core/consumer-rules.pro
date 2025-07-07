@@ -36,6 +36,17 @@
 -keepclassmembers,allowobfuscation class * {
 @com.google.gson.annotations.SerializedName <fields>;
 }
+# Keep classes that use Gson
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.** { *; }
+
+# Keep all public members of your model classes
+-keep class com.norman.core.data.source.remote.response.** { *; }
+
+# Keep the names of the fields in your model classes
+-keepclassmembers class com.norman.core.data.source.remote.response.** {
+  *;
+}
 
 
 ##---------------Begin: proguard configuration for Retrofit ----------

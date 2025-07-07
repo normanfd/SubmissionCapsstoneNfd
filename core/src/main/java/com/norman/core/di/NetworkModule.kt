@@ -10,6 +10,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -39,9 +40,15 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(chuckerInterceptor: ChuckerInterceptor, httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
+        val hostname = "api.themoviedb.org"
+        val certificatePinner = CertificatePinner.Builder()
+            .add(hostname, "sha256/f78NVAesYtdZ9OGSbK7VtGQkSIVykh3DnduuLIJHMu4=")
+            .add(hostname, "sha256/G9LNNAql897egYsabashkzUCTEJkWBzgoEtk8X/678c=")
+            .build()
         return OkHttpClient.Builder()
             .addInterceptor(chuckerInterceptor)
             .addInterceptor(httpLoggingInterceptor)
+            .certificatePinner(certificatePinner)
             .build()
     }
 
